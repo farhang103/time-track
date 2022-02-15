@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { useMemo, useState } from "react";
+import "./App.css";
+import Cards from "./components/cards";
+import { UserContext } from "./userContext";
 
 function App() {
+  const [value, setValue] = useState();
+  const providerValue = useMemo(() => ({ value, setValue }), [value, setValue]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={providerValue}>
+      <div className="bg-main flex h-full w-full sm:justify-center lg:h-screen lg:items-center">
+        <Cards />
+      </div>
+    </UserContext.Provider>
   );
 }
 
