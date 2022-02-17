@@ -1,32 +1,11 @@
-import React, { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
 import img from "../assets/image-jeremy.png";
-import { UserContext } from "../userContext";
 
 const ProfileCard = () => {
-  const [time, setTime] = useState();
-  const { value, setValue } = useContext(UserContext);
-
-  const handleDate = (date) => {
-    switch (date) {
-      case "day":
-        setValue(date);
-        console.log(value);
-        break;
-      case "week":
-        return "weekly";
-      case "month":
-        return "monthly";
-
-      default:
-        break;
-    }
-  };
-
-  // console.log(handleDaily());
   return (
-    <div className="bg-card h-51 mb-6 rounded-2xl lg:row-span-2 lg:h-full ">
-      <div className="bg-profile h-33 lg:h-95 flex w-full items-center justify-center rounded-2xl lg:relative">
-        <div className="w-19 h-19 lg:h-23 lg:w-22 border-3 top-9 left-8 rounded-full border-white lg:absolute">
+    <div className="mb-6 h-51 rounded-2xl bg-card lg:row-span-2 lg:h-full ">
+      <div className="flex h-33 w-full items-center justify-center rounded-2xl bg-profile lg:relative lg:h-95">
+        <div className="top-9 left-8 h-19 w-19 rounded-full border-3 border-white lg:absolute lg:h-23 lg:w-22">
           <img src={img} alt="img" />
         </div>
         <div className=" left-3 sm:mr-7 sm:ml-5 lg:absolute lg:mt-5 ">
@@ -39,24 +18,24 @@ const ProfileCard = () => {
         </div>
       </div>
       <div className=" flex h-1/3 w-full items-center justify-evenly text-base lg:ml-9 lg:flex-col lg:items-start">
-        <p
-          onClick={() => handleDate("day")}
-          className="text-off focus:text-on active:text-on hover:text-on cursor-pointer"
+        <NavLink
+          to="/daily"
+          className={({ isActive }) => (isActive ? "text-on" : "text-off")}
         >
           Daily
-        </p>
-        <p
-          onClick={() => handleDate("week")}
-          className="text-off focus:text-on active:text-on hover:text-on cursor-pointer"
+        </NavLink>
+        <NavLink
+          to="/weekly"
+          className={({ isActive }) => (isActive ? "text-on" : "text-off")}
         >
           Weekly
-        </p>
-        <p
-          onClick={() => handleDate("month")}
-          className="text-off focus:text-on active:text-on hover:text-on cursor-pointer"
+        </NavLink>
+        <NavLink
+          to="/monthly"
+          className={({ isActive }) => (isActive ? "text-on" : "text-off")}
         >
           Monthly
-        </p>
+        </NavLink>
       </div>
     </div>
   );

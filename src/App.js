@@ -1,17 +1,11 @@
-import { useMemo, useState } from "react";
 import "./App.css";
-import Cards from "./components/cards";
-import { UserContext } from "./userContext";
+import Router from "./routes/Router";
 
 function App() {
-  const [value, setValue] = useState();
-  const providerValue = useMemo(() => ({ value, setValue }), [value, setValue]);
   return (
-    <UserContext.Provider value={providerValue}>
-      <div className="bg-main flex h-full w-full sm:justify-center lg:h-screen lg:items-center">
-        <Cards />
-      </div>
-    </UserContext.Provider>
+    <div className="flex h-full w-full bg-main sm:justify-center lg:h-screen lg:items-center">
+      <Router />
+    </div>
   );
 }
 
