@@ -15,4 +15,4 @@
 
 ## Mobile design:
 
-![](./design/mobile-design.jpg)
+<img src="./design/mobile-design.jpg" width="300" >
