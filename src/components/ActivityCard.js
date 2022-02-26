@@ -57,7 +57,7 @@ const ActivityCard = ({ title, timeframes }) => {
           <img src={imageAcitivity(title)} alt="" />
         </div>
         <div className="absolute bottom-0 z-10 h-29 w-full  rounded-2xl bg-card lg:h-52">
-          <div className="flex h-full w-full items-center justify-center hover:bg-pableBlue hover:bg-opacity-20">
+          <div className="flex h-full w-full cursor-pointer items-center justify-center hover:bg-pableBlue hover:bg-opacity-20">
             <div className="relative h-14 w-65 lg:h-34 lg:w-51">
               <p className="absolute top-0 left-0 text-sm font-medium lg:top-0 lg:left-0 lg:text-lg ">
                 {title}
