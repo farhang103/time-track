@@ -56,22 +56,24 @@ const ActivityCard = ({ title, timeframes }) => {
         <div className="absolute right-4 -top-2.5 flex w-full justify-end lg:-top-1 lg:right-5">
           <img src={imageAcitivity(title)} alt="" />
         </div>
-        <div className="absolute bottom-0 z-10 flex h-29 w-full items-center justify-center rounded-2xl bg-card lg:h-52">
-          <div className="relative h-14 w-65 lg:h-34 lg:w-51">
-            <p className="absolute top-0 left-0 text-sm font-medium lg:top-0 lg:left-0 lg:text-lg ">
-              {title}
-            </p>
-            <p className="absolute left-0 -bottom-1.5 text-2xl font-light lg:bottom-10 lg:left-0.5 lg:text-5xl">
-              {timeframes[date].current}hrs
-            </p>
-            <img
-              className="absolute right-0 top-1.5 h-1 lg:h-1.5 lg:w-5"
-              src={threeDot}
-              alt=""
-            />
-            <p className="absolute right-0 bottom-1 text-xs text-date lg:bottom-0 lg:left-0 lg:text-base">
-              Last Week - {timeframes[date].previous}hrs
-            </p>
+        <div className="absolute bottom-0 z-10 h-29 w-full  rounded-2xl bg-card lg:h-52">
+          <div className="flex h-full w-full items-center justify-center hover:bg-pableBlue hover:bg-opacity-20">
+            <div className="relative h-14 w-65 lg:h-34 lg:w-51">
+              <p className="absolute top-0 left-0 text-sm font-medium lg:top-0 lg:left-0 lg:text-lg ">
+                {title}
+              </p>
+              <p className="absolute left-0 -bottom-1.5 text-2xl font-light lg:bottom-10 lg:left-0.5 lg:text-5xl">
+                {timeframes[date].current}hrs
+              </p>
+              <img
+                className="absolute right-0 top-1.5 h-1 cursor-pointer lg:h-1.5 lg:w-5"
+                src={threeDot}
+                alt=""
+              />
+              <p className="absolute right-0 bottom-1 text-xs text-date lg:bottom-0 lg:left-0 lg:text-base">
+                Last Week - {timeframes[date].previous}hrs
+              </p>
+            </div>
           </div>
         </div>
       </div>

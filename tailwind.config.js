@@ -34,6 +34,7 @@ module.exports = {
         off: "#60629D",
         on: "#FBFEFF",
         date: "#9FA2CF",
+        pableBlue: "hsl(236, 100%, 87%)",
       },
       fontFamily: {
         rubik: ["Rubik"],
