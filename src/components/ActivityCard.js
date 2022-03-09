@@ -65,13 +65,11 @@ const ActivityCard = ({ title, timeframes }) => {
               <p className="absolute left-0 -bottom-1.5 text-2xl font-light lg:bottom-10 lg:left-0.5 lg:text-5xl">
                 {timeframes[date].current}hrs
               </p>
-              <div className="absolute right-0 top-1.5 z-50 h-20 w-20 border-2 border-white p-4 hover:bg-gray-500">
-                <img
-                  className="absolute right-0 top-1.5 z-50 h-1 cursor-pointer  hover:text-white lg:h-1.5 lg:w-5"
-                  src={threeDot}
-                  alt=""
-                />
-              </div>
+              <img
+                className="absolute right-0 top-1.5 z-50 h-1 cursor-pointer  hover:text-white lg:h-1.5 lg:w-5"
+                src={threeDot}
+                alt=""
+              />
               <p className="absolute right-0 bottom-1 text-xs text-date lg:bottom-0 lg:left-0 lg:text-base">
                 Last Week - {timeframes[date].previous}hrs
               </p>
